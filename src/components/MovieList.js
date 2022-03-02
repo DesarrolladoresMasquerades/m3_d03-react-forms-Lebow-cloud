@@ -9,6 +9,12 @@ function MovieList() {
   const [moviesData, setMoviesData] = useState(moviesDataJSON);
   const [movies, setMovies] = useState(moviesDataJSON);
 
+  function addMovie(newMovie){
+    setMoviesData([...moviesData, newMovie]);
+
+    setMovies([...moviesData, newMovie].sort((a,b)=>a.title > b.title));
+  }
+
 
   return (
     <div>

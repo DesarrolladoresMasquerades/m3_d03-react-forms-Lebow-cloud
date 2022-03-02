@@ -11,12 +11,12 @@ function AddMovie(props) {
   })
 
   function handleDataChange(e){
-    const value = e.target.value
+    const inputName = e.target.value
     let value = ""
     if(inputName === "hasOscars") value = e.target.checked
     else value =e.target.value
 
-    const inputName = e.target.name
+    
     
     setFormData({...formData, [inputName]: value})
   }

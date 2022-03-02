@@ -15,11 +15,27 @@ function MovieList() {
     setMovies([...moviesData, newMovie].sort((a,b)=>a.title > b.title));
   }
 
+  function filterMovieList(capp){
+
+    let filteredMovies 
+    if(movies = "All"){
+
+      filteredMovies = moviesData
+    }else{
+      filteredMovies = moviesData.filter((movie)=>{
+        return movie.title[0].toLowerCase() === capp.toLowerCase()
+      })
+    }
+    
+
+    setMovies(filteredMovies)
+  }
+
 
   return (
     <div>
       <FilterMovies filterMovies={filterMovieList} />
-      <AddMovie addMovie={addNewMovie} />
+      <AddMovie addMovie={addMovie} />
       {movies.map((movie) => {
         return <MovieCard key={movie._id} movie={movie} />;
       })}

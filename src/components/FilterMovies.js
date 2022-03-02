@@ -3,7 +3,15 @@ import { useState } from "react";
 function FilterMovies(props) {
 
   
+    const [firstLetter, setFirstLetter] = useState("All")
 
+    function handleSelect(e){
+
+      setFirstLetter(e.target.value)
+
+      props.filteredMovies(e.target.value)
+    }
+  
   return (
     <div className="FilterMovies">
       <label>Show movies by first letter:</label>
